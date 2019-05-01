@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="Klassenplaner.Data" namespace="Klassenplaner.Data.Models" p1:name="KpDbContext" p1:Guid="898fdf65-4721-443d-9052-57d944b69199" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="$EnumTypes">
+    <EnumType Name="eCountry" UnderlyingType="Byte" class="eCountry" p1:Guid="ec51cabb-2096-4d5b-897d-05b9dd688bd5">
+      <Member Name="Deutschland" p1:Guid="0f823ddd-1566-4448-b3f3-36abb16b67f0" />
+      <Member Name="Österreich" p1:Guid="bf828c14-4041-43f3-97b4-ddd7c977e4f3" />
+      <Member Name="Schweiz" p1:Guid="ad0b4f63-f8b1-419a-9566-f43853f898ff" />
+    </EnumType>
+  </class>
+  <class name="School" entity-set="Schools" p1:Guid="dbacbe3d-9eac-43a9-a913-a4179e73aad2">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="e7ad4073-9578-4d1c-8b82-764095b1c21e">
+      <column name="" />
+    </id>
+    <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="172742c7-d71a-43b1-bc0a-00496b707f39">
+      <column name="" />
+    </property>
+    <property name="State" type="String" p1:ValidateRequired="true" p1:Guid="97097a2f-c426-4f2f-94b7-107883859853">
+      <column name="" />
+    </property>
+    <property name="City" type="String" p1:ValidateRequired="true" p1:Guid="df6e5737-1789-44fd-b9c0-251ef55a5d38">
+      <column name="" />
+    </property>
+    <property name="Country" type="Klassenplaner.Data.Models.eCountry" p1:ValidateRequired="true" p1:Guid="67b1a74d-be8a-40f1-b68b-839a66cda75d">
+      <column name="" />
+    </property>
+  </class>
+  <class name="Teacher" entity-set="Teachers" p1:Guid="ee43c1a5-0e8e-491a-b50a-8e5367724d94">
+    <id name="Id" type="Guid" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="ef30f1b6-f4df-41f3-9e96-231aacc9faa4">
+      <column name="" />
+    </id>
+    <property name="Name" type="String" p1:ValidateRequired="true" p1:Guid="f94cf0df-08b2-49ef-83e1-048cb1e2bc55">
+      <column name="" />
+    </property>
+    <property name="SchoolId" type="Guid" p1:ValidateRequired="true" p1:Guid="2620bbfe-c29e-4688-8464-f02703d9653a">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="Class" entity-set="Classes" p1:Guid="72fb3e17-8bae-4ff5-9b9c-e3ea1aaffc65">
+    <id name="Id" type="Guid" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="ef7290cf-b390-4b95-8df0-4d952b8db59e">
+      <column name="" />
+    </id>
+    <property name="Year" type="Byte" p1:ValidateRequired="true" p1:Guid="6a27b507-4ded-4141-911c-bf7fa49f861a">
+      <column name="" />
+    </property>
+    <property name="Group" type="Byte" p1:ValidateRequired="true" p1:Guid="2ef14b30-a42f-4c50-aa83-4576dff19754">
+      <column name="" />
+    </property>
+    <property name="SchoolId" type="Guid" p1:ValidateRequired="true" p1:Guid="605ced5f-45d3-4e38-8735-8ba45151c12c">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="Lesson" entity-set="Lessons" p1:Guid="7b6eea06-8920-4b0b-93bc-fee61a556f51">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="a4588fe5-56a9-48be-845c-19f1133ee2b5">
+      <column name="" />
+    </id>
+    <property name="DateCreated" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="56823251-4269-48b1-af94-2a824a8bf98b">
+      <column name="" />
+    </property>
+    <property name="DateUpdated" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="767634cc-0034-4090-97ed-66f8cc510989">
+      <column name="" />
+    </property>
+    <property name="WeekDay" type="Int16" p1:ValidateRequired="true" p1:Guid="269c81fb-e01c-4697-90b4-76ebe4e0b50a">
+      <column name="" />
+    </property>
+    <property name="ClassId" type="Guid" p1:ValidateRequired="true" p1:Guid="161cbea5-92b5-4e64-beb6-1cae3c161ceb">
+      <column name="" not-null="False" />
+    </property>
+    <property name="TeacherId" type="Guid" p1:ValidateRequired="true" p1:Guid="8642c2e8-ded9-4598-b784-99f52d9241d3">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="Room" entity-set="Rooms" p1:Guid="bdb85368-3758-4e67-a125-15c3dc974614">
+    <id name="Id" type="Guid" p1:ValidateRequired="true" p1:Guid="7cf95313-493e-4555-82dc-c835101f4400">
+      <column name="" />
+    </id>
+    <property name="DateCreated" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="739ef271-4aba-471b-85e8-e857a7bfe160">
+      <column name="" />
+    </property>
+    <property name="DateUpdated" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0a7ab57d-7870-4e18-a32b-56863f98536a">
+      <column name="" />
+    </property>
+  </class>
+  <associations>
+    <association name="School_Teacher" cardinality="OneToMany" on-delete="Restrict" p1:Guid="6d3351ee-3c37-48ff-b6ef-9513cbdea8d8">
+      <end1 multiplicity="One" name="School" class="Teacher" relation-class="School" constrained="True" lazy="False" p1:Guid="0f760661-317d-47af-a198-1a06f5e3933f">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Teachers" class="School" relation-class="Teacher" lazy="False" p1:Guid="679cc49f-df4e-41b6-8def-3ca7527dd76f">
+        <property name="SchoolId" />
+      </end2>
+    </association>
+    <association name="School_Class" cardinality="OneToMany" on-delete="Restrict" p1:Guid="51ca3979-028c-4d87-a14e-294cc9bbd5ad">
+      <end1 multiplicity="One" name="School" class="Class" relation-class="School" constrained="True" lazy="False" p1:Guid="4b55e0e2-1871-4d16-807c-f562ddaf7daa">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Classes" class="School" relation-class="Class" lazy="False" p1:Guid="c8b1aed4-cfd4-4f14-9736-8f0c1c66b0ec">
+        <property name="SchoolId" />
+      </end2>
+    </association>
+    <association name="Class_Lesson" cardinality="OneToMany" on-delete="Restrict" p1:Guid="f4af8f8c-bb04-44da-b77b-b6568028e8b9">
+      <end1 multiplicity="One" name="Class" class="Lesson" relation-class="Class" constrained="True" lazy="False" p1:Guid="4f957ef1-d05a-43e7-a20a-bf5688a0dbf2">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Lessons" class="Class" relation-class="Lesson" lazy="False" p1:Guid="95113b14-a4d5-4da1-885f-6cf8378d804e">
+        <property name="ClassId" />
+      </end2>
+    </association>
+    <association name="Teacher_Lesson" cardinality="OneToMany" p1:Guid="0720bcd0-4cbe-47ba-9d85-97392d25fdf2">
+      <end1 multiplicity="One" name="Teacher" class="Lesson" relation-class="Teacher" constrained="True" lazy="False" p1:Guid="2678decc-cc15-4252-928d-6122db7c2bc9">
+        <property name="Id" />
+      </end1>
+      <end2 multiplicity="Many" name="Lessons" class="Teacher" relation-class="Lesson" lazy="False" p1:Guid="cd4f9c31-331e-4c46-a02a-bf0c4815411c">
+        <property name="TeacherId" />
+      </end2>
+    </association>
+  </associations>
+</efcore>
