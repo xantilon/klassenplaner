@@ -2,7 +2,7 @@
 
 Stundenplan abtippen? Schon wieder?! Jedes Halbjahr der gleiche Mist. 
 
-**Warum kann das nicht einer aus der Klasse übernehmen?** 
+**Warum kann das nicht EINER aus der Klasse FÜR ALLE übernehmen?** 
 
 **HALT! Das geht mit Klassenplaner!**
 
